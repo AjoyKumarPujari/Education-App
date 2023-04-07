@@ -32,7 +32,7 @@ function SubmitHandler (event){
 
   return (
     <form onSubmit={SubmitHandler}
-    className='flex flex-col w-full gap-y-4 mt-6'>
+    className='flex flex-col w-full gap-y-4 mt-20 '>
         <label className='w-full'>
             <p className='text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]'>
                 Email Address<sup className='text-pink-200 gap-2'>*</sup>
