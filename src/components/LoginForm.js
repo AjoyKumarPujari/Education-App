@@ -31,25 +31,28 @@ function SubmitHandler (event){
 }
 
   return (
-    <form onSubmit={SubmitHandler}>
-        <label>
-            <p>
-                Email Address<sup>*</sup>
+    <form onSubmit={SubmitHandler}
+    className='flex flex-col w-full gap-y-4 mt-6'>
+        <label className='w-full'>
+            <p className='text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]'>
+                Email Address<sup className='text-pink-200 gap-2'>*</sup>
             </p>
             <input
             required
             type="email"
             value= {formData.email}
             onChange={changeHandler}
-            placeholder="Enter Email Id"
+            placeholder="Enter Email Address"
             name="email"
+            className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
             />
         </label>
 
-        <label>
-            <p>
-               Password<sup>*</sup>
+        <label className='w-full relative'>
+            <p className='text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]'>
+               Password<sup className='text-pink-200'>*</sup>
             </p>
+
             <input
             required
             type={showPassword ? ("text") : ("password")}
@@ -57,19 +60,25 @@ function SubmitHandler (event){
             onChange={changeHandler}
             placeholder="Enter Password" 
             name="password"
+            className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px] '
             />
 
-            <span onClick={()=>setShowPassword((prev) => !prev)}>
-                {showPassword ? (<AiOutlineEyeInvisible/>) : (<AiOutlineEye/>)}
+            <span onClick={()=>setShowPassword((prev) => !prev)}
+            className='absolute right-3 top-[38px]'>
+                {showPassword 
+                
+                ? (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : 
+                
+                (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
             </span>
 
             <Link to="#">
-                <p>
+                <p className='text-xs  mt-1 text-blue-100 max-w-max  ml-auto'>
                     Forget Password
                 </p>
             </Link>
         </label>
-        <button>
+        <button className='bg-yellow-50 rounded w-full p-2 font-medium mt-6'>
             Sign In
         </button>
     </form>
